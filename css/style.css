@@ -1,23 +1,35 @@
 html {
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h1 {
     font-family: 'Raleway', sans-serif;
     font-weight: 900;
 }
+
 .titulo {
     text-align: center;
 }
+
 .header {
     padding-top: 3rem;
 }
+
 .navegacion {
     background-color: black;
     margin: 3rem 0;
@@ -30,16 +42,20 @@ h1 {
     text-transform: uppercase;
     text-align: center;
 }
+
 .navegacion a:hover {
     background-color: #c9c84a;
     color: black;
 }
+
 img {
     max-width: 100%;
 }
+
 .slider img {
     width: 100%;
 }
+
 .entrada p {
     text-align: justify;
 }
@@ -49,26 +65,31 @@ img {
     color: white;
     font-size: 1.4rem;
 }
+
 .informacion p {
     margin: 0 0 .5rem 0;
     padding: 1rem;
     text-align: center;
 }
+
 .imagen1,
 .imagen2 {
     text-align: center;
 }
+
 blockquote {
     font-size: 1.4rem;
     text-align: center;
     font-style: italic;
     color: #525252;
 }
+
 .footer {
     background-color: #c9c84a;
     padding-top: 3rem;
     text-align: center;
 }
+
 .footer a {
     display: block;
     color: black;
@@ -77,6 +98,7 @@ blockquote {
     color: #525252;
     margin-bottom: .5rem;
 }
+
 .copyright {
     color: white;
     background-color: #282828;
@@ -85,4 +107,36 @@ blockquote {
     text-align: center;
 }
 
+
 /** Grid aqui**/
+
+.navegacion nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media screen and (min-width: 768px) {
+    .contenido-principal {
+        display: grid;
+        grid-template-columns: minmax(100px, max-content) auto minmax(100px, max-content);
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 1rem;
+    }
+    .titulo {
+        grid-column: 1 / 4;
+    }
+    .informacion {
+        grid-row: 2 / 3;
+    }
+    .imagen1 {
+        grid-row: 3 / 4;
+        grid-column: 3 / 4;
+    }
+    .entrada {
+        grid-column: 2 / 3;
+        grid-row: 2 / 5;
+    }
+    .imagen2 {
+        grid-row: 4 / 5;
+    }
+}
