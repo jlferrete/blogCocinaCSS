@@ -140,3 +140,8 @@ blockquote {
         grid-row: 4 / 5;
     }
 }
+
+.footer .contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
